@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Bigeggroll</title>
+  <title>JDK1.8后的新特性 | Bigeggroll</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="JDK1.8后的新特性 在jdk1.8中对hashMap等map集合的数据结构优化。 ​    原来的hashMap采用的数据结构是哈希表（数组+链表），hashMap默认大小是16，一个0-15索引的数组，如何往里面存储元素，首先调用元素的hashcode方法，计算出哈希码值，经过哈希算法算成数组的索引值，如果对应的索引处没有元素，直接存放，如果有对象在，那么比较它们的equals方法比较内容">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/07/01/hello-world/index.html">
+<meta property="og:title" content="JDK1.8后的新特性">
+<meta property="og:url" content="http://yoursite.com/2018/08/23/JDK1.8后的新特性/index.html">
 <meta property="og:site_name" content="Bigeggroll">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="JDK1.8后的新特性 在jdk1.8中对hashMap等map集合的数据结构优化。 ​    原来的hashMap采用的数据结构是哈希表（数组+链表），hashMap默认大小是16，一个0-15索引的数组，如何往里面存储元素，首先调用元素的hashcode方法，计算出哈希码值，经过哈希算法算成数组的索引值，如果对应的索引处没有元素，直接存放，如果有对象在，那么比较它们的equals方法比较内容">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-01T07:01:41.056Z">
+<meta property="og:updated_time" content="2019-08-30T16:10:22.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="JDK1.8后的新特性">
+<meta name="twitter:description" content="JDK1.8后的新特性 在jdk1.8中对hashMap等map集合的数据结构优化。 ​    原来的hashMap采用的数据结构是哈希表（数组+链表），hashMap默认大小是16，一个0-15索引的数组，如何往里面存储元素，首先调用元素的hashcode方法，计算出哈希码值，经过哈希算法算成数组的索引值，如果对应的索引处没有元素，直接存放，如果有对象在，那么比较它们的equals方法比较内容">
   
     <link rel="alternative" href="/atom.xml" title="Bigeggroll" type="application/atom+xml">
   
@@ -154,39 +154,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JDK1.8后的新特性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      JDK1.8后的新特性
     </h1>
   
 
         
-        <a href="/2019/07/01/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-01T07:01:41.056Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+        <a href="/2018/08/23/JDK1.8后的新特性/" class="archive-article-date">
+  	<time datetime="2018-08-23T09:02:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h2 id="JDK1-8后的新特性"><a href="#JDK1-8后的新特性" class="headerlink" title="JDK1.8后的新特性"></a>JDK1.8后的新特性</h2><blockquote>
+<p>在jdk1.8中对hashMap等map集合的数据结构优化。</p>
+<p>​    原来的hashMap采用的数据结构是哈希表（数组+链表），hashMap默认大小是16，一个0-15索引的数组，如何往里面存储元素，首先调用元素的hashcode方法，计算出哈希码值，经过哈希算法算成数组的索引值，如果对应的索引处没有元素，直接存放，如果有对象在，那么比较它们的equals方法比较内容 ,如果内容一样，后一个value会将前一个value的值覆盖，如果不一样，在1.7的时候，后加的放在前面，形成一个链表，形成了碰撞，在某些情况下如果链表无限下去，那么效率极低，碰撞是避免不了的 ,加载因子：0.75，数组扩容，达到总容量的75%，就进行扩容，但是无法避免碰撞的情况发生,在1.8之后，在数组+链表+红黑树来实现hashmap，当碰撞的元素个数大于8时 &amp; 总容量大于64，会有红黑树的引入,除了添加之后，效率都比链表高，1.8之后链表新进元素加到末尾,ConcurrentHashMap (锁分段机制)，concurrentLevel,jdk1.8采用CAS算法(无锁算法，不再使用锁分段)，数组+链表中也引入了红黑树的使用</p>
+</blockquote>
+<p>###Lambda表达式 </p>
+<p>先初步的了解一下lambda表达式的应用场景 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用匿名内部内调用线程</span></span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"来啦老弟"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).start();</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用lambda表达式重写run方法并调用线程</span></span><br><span class="line"><span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">    System.out.println(<span class="string">"来啦小老弟"</span>);</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>####匿名内部类简化了实现类和子类的编写，使用Lambda表达式简化了部分匿名内部类的编写。 </p>
+<p>Lambda表达式的格式： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">格式 ：(方法的参数列表)-&gt;&#123;方法体&#125;</span><br><span class="line">（形式参数）：如果有多个参数，参数之间用逗号隔开；如果没有参数，留空即可</span><br><span class="line">-&gt; : 由英文中画线和大于符号组成，固定写法。代表指向动作</span><br><span class="line">&#123;代码块&#125; ：是我们具体要做的事情，也就是以前我们写的方法体内容</span><br><span class="line">组成Lambda表达式的三要素：</span><br><span class="line">     形式参数，箭头，代码块</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h5 id="Lambda表达式用于自定义的类的用法"><a href="#Lambda表达式用于自定义的类的用法" class="headerlink" title="Lambda表达式用于自定义的类的用法"></a>Lambda表达式用于自定义的类的用法</h5><ul>
+<li>Lambda表达式用于无参数的情况</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">EatAble</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LambdaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//使用匿名内部内调用eat方法</span></span><br><span class="line">        eatAble(<span class="keyword">new</span> EatAble() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"吃大苹果"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//使用lambda表达式重写eat方法并调用</span></span><br><span class="line">        eatAble(() -&gt;&#123;</span><br><span class="line">            System.out.println(<span class="string">"吃苹果"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">eatAble</span><span class="params">(EatAble e)</span></span>&#123;</span><br><span class="line">        e.eat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Lambda表达式用于有参数的情况</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Fly</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">(String s)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//匿名内部内</span></span><br><span class="line">flyAble(<span class="keyword">new</span> Fly() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        System.out.println(<span class="string">"飞机起飞了"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//有参的lambda表达式</span></span><br><span class="line">flyAble((String s)-&gt;&#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">    System.out.println(<span class="string">"飞机又起飞了"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">flyAble</span><span class="params">(Fly f)</span></span>&#123;</span><br><span class="line">    f.fly(<span class="string">"开飞机喽"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<ul>
+<li>Lambda表达式用于有参数有返回值的情况</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AddAble</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addAble(<span class="keyword">new</span> AddAble() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a+b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//lambda有参有返回值类型</span></span><br><span class="line">addAble((<span class="keyword">int</span> a,<span class="keyword">int</span> b) -&gt;&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addAble</span><span class="params">(AddAble a)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = a.add(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">    System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上是Lambda基础的用法，Lambda还能够更加的简化，可以根据不同的情况进行简化</p>
+<p>######简化规则：</p>
+<ol>
+<li>参数类型可以省略。但是有多个参数的情况下，不能只省略一个 </li>
+<li>如果参数有且仅有一个，那么小括号可以省略 </li>
+<li>如果代码块的语句只有一条，可以省略大括号和分号，和return关键字</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">EatAble</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Fly</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">(String s)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addAble((<span class="keyword">int</span> a,<span class="keyword">int</span> b) -&gt;&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//参数的类型可以省略 </span></span><br><span class="line">useAddable((x, y) -&gt; &#123; </span><br><span class="line">    <span class="keyword">return</span> x + y; </span><br><span class="line">&#125;);</span><br><span class="line">useFlyable((String s) -&gt; &#123; System.out.println(s); &#125;);</span><br><span class="line"><span class="comment">//如果参数有且仅有一个，那么小括号可以省略 </span></span><br><span class="line">useFlyable(s -&gt; &#123;  System.out.println(s);  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果代码块的语句只有一条，可以省略大括号和分号 </span></span><br><span class="line">useFlyable(s -&gt; System.out.println(s));</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果代码块的语句只有一条，可以省略大括号和分号，如果有return，return也要省略掉 </span></span><br><span class="line">useAddable((x, y) -&gt; x + y);</span><br></pre></td></tr></table></figure>
+
+<h6 id="Lambda表达式的注意事项"><a href="#Lambda表达式的注意事项" class="headerlink" title="Lambda表达式的注意事项"></a>Lambda表达式的注意事项</h6><p>​    使用Lambda必须要有接口，并且要求接口中有且仅有一个抽象方法 </p>
+<p>​    必须有上下文环境，才能推导出Lambda对应的接口 </p>
+<ul>
+<li><ul>
+<li><p>根据局部变量的赋值得知Lambda对应的接口 </p>
+</li>
+<li><p>Runnable r = () -&gt; System.out.println(“Lambda表达式”); </p>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><p>根据调用方法的参数得知Lambda对应的接口</p>
+</li>
+<li><p>new Thread(() -&gt; System.out.println(“Lambda表达式”)).start();</p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Lambda表达式和匿名内部类的区别"><a href="#Lambda表达式和匿名内部类的区别" class="headerlink" title="Lambda表达式和匿名内部类的区别"></a>Lambda表达式和匿名内部类的区别</h6><ol>
+<li><p>所需类型不同 </p>
+<p>匿名内部类：可以是接口，也可以是抽象类，还可以是具体类 </p>
+<p>Lambda表达式：只能是接口 </p>
+</li>
+<li><p>使用限制不同 </p>
+<p>如果接口中有且仅有一个抽象方法，可以使用Lambda表达式，也可以使用匿名内部类 </p>
+<p>如果接口中多于一个抽象方法，只能使用匿名内部类，而不能使用Lambda表达式 </p>
+</li>
+<li><p>实现原理不同 </p>
+<p>匿名内部类：编译之后，产生一个单独的.class字节码文件</p>
+<p>Lambda表达式：编译之后，没有一个单独的.class字节码文件。对应的字节码会在运行的时                       候动态生成</p>
+</li>
+</ol>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h5 id="接口组成更新概述"><a href="#接口组成更新概述" class="headerlink" title="接口组成更新概述"></a>接口组成更新概述</h5><pre><code>1. 常量 public static final 
+2. 抽象方法 public abstract 
+3. 默认方法(Java 8) 
+4. 静态方法(Java 8) 
+5. 私有方法(Java 9)</code></pre><h6 id="接口中默认方法"><a href="#接口中默认方法" class="headerlink" title="接口中默认方法"></a>接口中默认方法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">格式</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">default</span> 返回值类型 方法名(参数列表) &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项 </p>
+<ul>
+<li>默认方法不是抽象方法，所不以强制被重写。但是可以被重写，重写的时候去掉default关键字 </li>
+<li>public可以省略，default不能省略</li>
+</ul>
+<h6 id="接口中静态方法"><a href="#接口中静态方法" class="headerlink" title="接口中静态方法"></a>接口中静态方法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">格式</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> 返回值类型 方法名(参数列表) &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项 </p>
+<ul>
+<li>静态方法只能通过接口名调用，不能通过实现类名或者对象名调用 </li>
+<li>public可以省略，static不能省略</li>
+</ul>
+<h6 id="接口中私有方法"><a href="#接口中私有方法" class="headerlink" title="接口中私有方法"></a>接口中私有方法</h6><p>私有方法产生原因 </p>
+<p>​    Java 9中新增了带方法体的私有方法，这其实在Java 8中就埋下了伏笔：Java 8允许在接口中定义带方法体的 默认方法和静态方法。这样可能就会引发一个问题：当两个默认方法或者静态方法中包含一段相同的代码实 现时，程序必然考虑将这段实现代码抽取成一个共性方法，而这个共性方法是不需要让别人使用的，因此用 私有给隐藏起来，这就是Java 9增加私有方法的必然性</p>
+<p>定义格式 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式<span class="number">1</span></span><br><span class="line"><span class="keyword">private</span> 返回值类型 方法名(参数列表) &#123; &#125; </span><br><span class="line">格式<span class="number">2</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> 返回值类型 方法名(参数列表) &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项 </p>
+<ul>
+<li>默认方法可以调用私有的静态方法和非静态方法</li>
+<li>静态方法只能调用私有的静态方法</li>
+</ul>
+<h3 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h3><p>方法引用的出现原因</p>
+<p>​    在使用Lambda表达式的时候，我们实际上传递进去的代码就是一种解决方案：拿参数做操作 那么考虑一种情况：如果我们在Lambda中所指定的操作方案，已经有地方存在相同方案，那是否还有必要再 写重复逻辑呢？答案肯定是没有必要 那我们又是如何使用已经存在的方案的呢？ 这就是我们要讲解的方法引用，我们是通过方法引用来使用已经存在的方案</p>
+<p>代码演示 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Printable</span> </span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">void</span> <span class="title">printString</span><span class="params">(String s)</span></span>;</span><br><span class="line"> &#125; </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintableDemo</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">     <span class="comment">//在主方法中调用usePrintable方法 </span></span><br><span class="line">    <span class="comment">// usePrintable((String s) -&gt; &#123; </span></span><br><span class="line">    <span class="comment">// System.out.println(s);</span></span><br><span class="line">     <span class="comment">// &#125;);</span></span><br><span class="line">     <span class="comment">//Lambda简化写法</span></span><br><span class="line">    usePrintable(s -&gt; System.out.println(s)); </span><br><span class="line">    <span class="comment">//方法引用 </span></span><br><span class="line">    usePrintable(System.out::println); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">usePrintable</span><span class="params">(Printable p)</span> </span>&#123; </span><br><span class="line">        p.printString(<span class="string">"来啦"</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法引用符</p>
+<pre><code>:: 该符号为引用运算符，而它所在的表达式被称为方法引用 </code></pre><p>推导与省略 </p>
+<ul>
+<li>如果使用Lambda，那么根据“可推导就是可省略”的原则，无需指定参数类型，也无需指定的重载    形式， 它们都将被自动推导 </li>
+<li>如果使用方法引用，也是同样可以根据上下文进行推导 </li>
+<li>方法引用是Lambda的孪生兄弟</li>
+</ul>
+<p>引用类方法</p>
+<p>​    引用类方法，其实就是引用类的静态方法</p>
+<p>格式 </p>
+<p>​    类名::静态方法 </p>
+<p>​    范例 ：Integer::parseInt </p>
+<p>​    Integer类的方法：public static int parseInt(String s) 将此String转换为int类型数据 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Converter</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">convert</span><span class="params">(String s)</span></span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConverterDemo</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">        <span class="comment">//Lambda写法 </span></span><br><span class="line">        useConverter(s -&gt; Integer.parseInt(s));</span><br><span class="line">         <span class="comment">//引用类方法 </span></span><br><span class="line">        useConverter(Integer::parseInt); </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useConverter</span><span class="params">(Converter c)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">int</span> number = c.convert(<span class="string">"666"</span>); </span><br><span class="line">        System.out.println(number); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用说明 </p>
+<p>Lambda表达式被类方法替代的时候，它的形式参数全部传递给静态方法作为参数</p>
+<p>引用对象的实例方法</p>
+<p>引用对象的实例方法，其实就引用类中的成员方法 </p>
+<p>格式 </p>
+<p>​    对象::成员方法 </p>
+<p>范例 </p>
+<p>​    “HelloWorld”::toUpperCase </p>
+<p>​    String类中的方法：public String toUpperCase() 将此String所有字符转换为大写 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintString</span> </span>&#123; </span><br><span class="line">    <span class="comment">//把字符串参数变成大写的数据，然后在控制台输出 </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printUpper</span><span class="params">(String s)</span> </span>&#123; </span><br><span class="line">    String result = s.toUpperCase(); </span><br><span class="line">    System.out.println(result); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Printer</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">printUpperCase</span><span class="params">(String s)</span></span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrinterDemo</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    <span class="comment">//Lambda简化写法 </span></span><br><span class="line">    usePrinter(s -&gt; System.out.println(s.toUpperCase()));</span><br><span class="line">     <span class="comment">//引用对象的实例方法 </span></span><br><span class="line">    PrintString ps = <span class="keyword">new</span> PrintString(); </span><br><span class="line">    usePrinter(ps::printUpper); </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">usePrinter</span><span class="params">(Printer p)</span> </span>&#123; </span><br><span class="line">        p.printUpperCase(<span class="string">"HelloWorld"</span>);</span><br><span class="line">     &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用说明 </p>
+<p>Lambda表达式被对象的实例方法替代的时候，它的形式参数全部传递给该方法作为参数</p>
+<p>引用类的实例方法</p>
+<p>引用类的实例方法，其实就是引用类中的成员方法 </p>
+<p>格式 </p>
+<p>​    类名::成员方法 </p>
+<p>范例 </p>
+<p>​    String::substring public String substring(int beginIndex,int endIndex) </p>
+<p>​    从beginIndex开始到endIndex结束，截取字符串。返回一个子串，子串的长度为endIndex-beginIndex</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyString</span> </span>&#123; </span><br><span class="line">    <span class="function">String <span class="title">mySubString</span><span class="params">(String s,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyS</span> <span class="title">tringDemo</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    <span class="comment">//Lambda简化写法 </span></span><br><span class="line">    useMyString((s,x,y) -&gt; s.substring(x,y));</span><br><span class="line">     <span class="comment">//引用类的实例方法 useMyString(String::substring); </span></span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useMyString</span><span class="params">(MyString my)</span> </span>&#123;</span><br><span class="line">         String s = my.mySubString(<span class="string">"HelloWorld"</span>, <span class="number">2</span>, <span class="number">5</span>); System.out.println(s); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用说明 </p>
+<p>Lambda表达式被类的实例方法替代的时候 第一个参数作为调用者 后面的参数全部传递给该方法作为参数</p>
+<p>引用构造器</p>
+<p>引用构造器，其实就是引用构造方法 </p>
+<p>格式 </p>
+<p>​    类名::new </p>
+<p>范例  ：Student::new</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StudentBuilder</span> </span>&#123; </span><br><span class="line">    <span class="function">Student <span class="title">build</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentDemo</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">        <span class="comment">//Lambda简化写法 </span></span><br><span class="line">        useStudentBuilder((name,age) -&gt; <span class="keyword">new</span> Student(name,age)); </span><br><span class="line">        <span class="comment">//引用构造器 </span></span><br><span class="line">        useStudentBuilder(Student::<span class="keyword">new</span>); </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useStudentBuilder</span><span class="params">(StudentBuilder sb)</span> </span>&#123; </span><br><span class="line">        Student s = sb.build(<span class="string">"林青霞"</span>, <span class="number">30</span>); </span><br><span class="line">        System.out.println(s.getName() + <span class="string">","</span> + s.getAge());</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用说明 </p>
+<p>Lambda表达式被构造器替代的时候，它的形式参数全部传递给构造器作为参数</p>
 
       
 
@@ -266,7 +402,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/01/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/23/JDK1.8后的新特性/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,20 +416,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/01/第一篇文章/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          第一篇文章
+          Hello World
         
       </div>
     </a>
   
-  
-    <a href="/2018/08/23/JDK1.8后的新特性/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JDK1.8后的新特性</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
